@@ -43,7 +43,7 @@ document.body.innerHTML = `<button type="button" id="gameButton" onclick='showLo
  */
 async function getCategoryIds() {
     for(let i = 0; i < NUM_CATEGORIES; i++){
-        let response = await axios.get('http://jservice.io/api/random');
+        let response = await axios.get('https://jservice.io/api/random');
         let categoryId = response.data.map(result => {
         let catId = result.category.id;
 
@@ -65,7 +65,7 @@ async function getCategory(catId) {
  *      ...
  *   ]
  */
-        let response = await axios.get(`http://jservice.io/api/category?id=${catId}`);
+        let response = await axios.get(`https://jservice.io/api/category?id=${catId}`);
         // Top row of categories
         categories.push(response.data.title);
 
